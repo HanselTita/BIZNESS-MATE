@@ -2,7 +2,8 @@
 // It exports a pool of connections that can be used throughout the application.
 // It uses environment variables to configure the database connection.
 
-const { Pool } = require('pg');
+import { Pool } from 'pg';
+
 require('dotenv').config();
 
 // The connection string is typically in the format:postgres://username:password@hostname:port/database

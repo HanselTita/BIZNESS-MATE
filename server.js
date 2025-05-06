@@ -1,11 +1,20 @@
+import express, { json } from 'express';
+import cors from 'cors';
+const app = express();
+import authRoutes from './routes/authRoutes'; // Import your auth routes
 
-require('dotenv').config();
+require('dotenv').config(); // Load environment variables
+import pool from './db';   // Import your database connection
 
-// Now you can access your environment variables using process.env
-const databaseUrl = process.env.DATABASE_URL;
-console.log('Database URL:', databaseUrl); // For verification (remove in production)
+app.use(cors());
+app.use(json()); // Middleware to parse JSON request bodies
 
+app.use('/api', authRoutes); // Mount the auth routes under the /api path
 
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
+});
 
 
 
