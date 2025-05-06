@@ -1,10 +1,13 @@
 import express, { json } from 'express';
 import cors from 'cors';
-const app = express();
-import authRoutes from './routes/authRoutes'; // Import your auth routes
+import authRoutes from './route/authRoutes.js'; // Import your auth routes
+import pool from './db.js'; // Import your database connection
+import dotenv from 'dotenv';
 
-require('dotenv').config(); // Load environment variables
-import pool from './db';   // Import your database connection
+// ... rest of your imports // Load environment variables
+
+const app = express();
+dotenv.config();
 
 app.use(cors());
 app.use(json()); // Middleware to parse JSON request bodies

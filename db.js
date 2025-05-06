@@ -1,18 +1,18 @@
 // This file is responsible for connecting to the PostgreSQL database using the pg library.
 // It exports a pool of connections that can be used throughout the application.
 // It uses environment variables to configure the database connection.
+// db.js
+import { Pool } from 'pg'; // Changed to ES module import
+import 'dotenv/config';
 
-import { Pool } from 'pg';
 
-require('dotenv').config();
-
-// The connection string is typically in the format:postgres://username:password@hostname:port/database
 const pool = new Pool({
   connectionString: process.env.DATABASE_URL,
-  ssl: {
-    rejectUnauthorized: false // Only set to false if you're sure about your SSL configuration
-  }
+  ssl: false // Explicitly disable SSL on the client side
 });
+
+// export default pool; (removed duplicate)
+
 
 // Test the connection to the database
 pool.connect()
@@ -21,7 +21,7 @@ pool.connect()
 
 
 
-module.exports = pool; // This allows you to use the same pool of connections across your application,
+export default pool;
 
 
 
