@@ -21,35 +21,37 @@ function Dashboard() {
   };
 
   const handleLogout = () => {
-    // Clear authentication token and user data from local storage or context
     localStorage.removeItem('authToken');
     localStorage.removeItem('rememberMe');
     localStorage.removeItem('rememberedUser');
-    localStorage.removeItem('username'); // Clear username as well
-
-    // Redirect the user to the login page
+    localStorage.removeItem('username');
     navigate('/login');
   };
 
   return (
     <div className="dashboard-container">
-      <div className="dashboard-header">
-      <h2>Welcome, {username}!</h2>
-        <button className="logout-button" onClick={handleLogout}>
-          Log Out
-        </button>
+      <div className="dashboard-header-sidebar"> {/* Will act as the left sidebar */}
+        <div className="user-info">
+          <h2>Welcome, {username}!</h2>
+          <button className="logout-button" onClick={handleLogout}>
+            Log Out
+          </button>
+        </div>
+        <div className="navigation">
+
+          <ul>
+            <li><Link to="/investments">Investment</Link></li>
+            <li><Link to="/production-costs">Production</Link></li>
+            <li><Link to="/expenditures">Expenditure</Link></li>
+            <li><Link to="/sales">Sales</Link></li>
+            <li><Link to="/delete-investments">Delete Investment</Link></li>
+          </ul>
+        </div>
       </div>
-      <div className="dashboard-sidebar">
-        <h2>Navigation</h2>
-        <ul>
-          <li><Link to="/investments">Investment</Link></li>
-          <li><Link to="/production-costs">Production</Link></li>
-          <li><Link to="/expenditures">Expenditure</Link></li>
-          <li><Link to="/sales">Sales</Link></li>
-          <li><Link to="/delete-investments">Delete Investment</Link></li>
-        </ul>
-      </div>
-      <div className="dashboard-content">
+      <div className="dashboard-content"> {/* Right column for tabs and content */}
+      <div className="ad-placeholder"> {/* Placeholder div for the ad */}
+          {/* You might include your Google AdSense code here */}
+        </div>
         <div className="table-header-row">
           <button
             className={activeTab === 'production' ? 'active' : ''}
