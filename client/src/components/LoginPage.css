@@ -1,0 +1,96 @@
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh; /* Make it take up at least the full viewport height */
+  padding: 20px;
+  background-color: #f4f4f4; /* Example background color */
+}
+
+.login-form {
+  background-color: #59ADFF;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px; /* Limit the width of the form */
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Spacing between form elements */
+}
+
+.login-form h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  margin-bottom: 5px;
+  color: #555;
+}
+
+.input-field {
+  padding: 10px;
+  border: 1px solid#B2EBF2;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.remember-me {
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start; /* Align items to the left */
+  gap: 5px;
+}
+
+.login-button,
+.forgot-password-button {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.login-button {
+  background-color: #28a745;/* Example login button color */
+  color: #fff;
+}
+
+.login-button:hover {
+  background-color: #0056b3;
+}
+
+.forgot-password-button {
+  background-color: transparent;
+  color: #555;
+  text-decoration: underline;
+  align-self: flex-end; /* Push to the right */
+}
+
+.forgot-password-button:hover {
+  color: #007bff;
+}
+
+.signup-link {
+  margin-top: 20px;
+  color: #555;
+  text-align: center;
+}
+
+.signup-link a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.signup-link a:hover {
+  text-decoration: underline;
+}
