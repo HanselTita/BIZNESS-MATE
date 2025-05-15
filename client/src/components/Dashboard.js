@@ -1,6 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import './Dashboard.css';
 import { Link, useNavigate } from 'react-router-dom';
+import AddInvestmentForm from './AddInvestmentForm';
+import AddProductionForm from './AddProductionForm';
+import AddExpenditureForm from './AddExpenditureForm';
+import AddSaleForm from './AddSaleForm';
+import DeleteInvestmentForm from './DeleteInvestmentForm'; // Import the new form
 
 function Dashboard() {
   const [activeTab, setActiveTab] = useState('production');
@@ -20,6 +25,26 @@ function Dashboard() {
     setActiveTab(tabName);
   };
 
+  const handleInvestmentClick = () => {
+    setActiveTab('add-investment');
+  };
+
+  const handleProductionClick = () => {
+    setActiveTab('add-production');
+  };
+
+  const handleExpenditureClick = () => {
+    setActiveTab('add-expenditure');
+  };
+
+  const handleSalesClick = () => {
+    setActiveTab('add-sale');
+  };
+
+  const handleDeleteInvestmentClick = () => {
+    setActiveTab('delete-investment');
+  };
+
   const handleLogout = () => {
     localStorage.removeItem('authToken');
     localStorage.removeItem('rememberMe');
@@ -30,7 +55,7 @@ function Dashboard() {
 
   return (
     <div className="dashboard-container">
-      <div className="dashboard-header-sidebar"> {/* Will act as the left sidebar */}
+      <div className="dashboard-header-sidebar">
         <div className="user-info">
           <h2>Welcome, {username}!</h2>
           <button className="logout-button" onClick={handleLogout}>
@@ -38,18 +63,29 @@ function Dashboard() {
           </button>
         </div>
         <div className="navigation">
-
           <ul>
-            <li><Link to="/investments">Investment</Link></li>
-            <li><Link to="/production-costs">Production</Link></li>
-            <li><Link to="/expenditures">Expenditure</Link></li>
-            <li><Link to="/sales">Sales</Link></li>
-            <li><Link to="/delete-investments">Delete Investment</Link></li>
+            
+            <li className={activeTab === 'add-investment' ? 'active-sidebar-item' : ''}>
+              <Link to="#" onClick={handleInvestmentClick}>Investment</Link>
+            </li>
+            <li className={activeTab === 'add-production' ? 'active-sidebar-item' : ''}>
+              <Link to="#" onClick={handleProductionClick}>Production</Link>
+            </li>
+          
+            <li className={activeTab === 'add-expenditure' ? 'active-sidebar-item' : ''}>
+              <Link to="#" onClick={handleExpenditureClick}>Expenditure</Link>
+            </li>
+            <li className={activeTab === 'add-sale' ? 'active-sidebar-item' : ''}>
+              <Link to="#" onClick={handleSalesClick}>Sales</Link>
+            </li>
+            <li className={activeTab === 'delete-investment' ? 'active-sidebar-item' : ''}>
+              <Link to="#" onClick={handleDeleteInvestmentClick}>Delete Investment</Link>
+            </li>
           </ul>
         </div>
       </div>
-      <div className="dashboard-content"> {/* Right column for tabs and content */}
-      <div className="ad-placeholder"> {/* Placeholder div for the ad */}
+      <div className="dashboard-content">
+        <div className="ad-placeholder">
           {/* You might include your Google AdSense code here */}
         </div>
         <div className="table-header-row">
@@ -79,6 +115,11 @@ function Dashboard() {
           </button>
         </div>
         <div className="table-data-row">
+          {activeTab === 'add-investment' && <AddInvestmentForm />}
+          {activeTab === 'add-production' && <AddProductionForm />}
+          {activeTab === 'add-expenditure' && <AddExpenditureForm />}
+          {activeTab === 'add-sale' && <AddSaleForm />}
+          {activeTab === 'delete-investment' && <DeleteInvestmentForm />}
           {activeTab === 'production' && <div>Data for Cost of Production</div>}
           {activeTab === 'expenditure' && <div>Data for Total Expenditure</div>}
           {activeTab === 'sales' && <div>Data for Total Sales</div>}

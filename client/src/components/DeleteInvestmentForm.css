@@ -1,0 +1,57 @@
+/* src/components/DeleteInvestmentForm.css */
+.delete-investment-form {
+    padding: 20px;
+  }
+  
+  .delete-investment-form h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: #d32f2f; /* Example red color for delete */
+  }
+  
+  .delete-investment-form .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .delete-investment-form label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+    font-weight: bold;
+  }
+  
+  .delete-investment-form select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    box-sizing: border-box;
+  }
+  
+  .delete-investment-form .delete-button {
+    padding: 12px 20px;
+    border: 1px solid #d32f2f;
+    background-color: #fff;
+    color: #d32f2f;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+    margin-top: 15px;
+  }
+  
+  .delete-investment-form .delete-button:hover {
+    background-color: #d32f2f;
+    color: #fff;
+  }
+  
+  .delete-investment-form .error-message {
+    color: #f44336;
+    margin-bottom: 10px;
+  }
+  
+  .delete-investment-form .success-message {
+    color: #4caf50;
+    margin-bottom: 10px;
+  }

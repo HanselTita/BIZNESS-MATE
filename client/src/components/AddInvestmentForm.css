@@ -1,0 +1,56 @@
+/* src/components/AddInvestmentForm.css */
+.add-investment-form {
+    padding: 20px;
+  }
+  
+  .add-investment-form h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .add-investment-form .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .add-investment-form label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+    font-weight: bold;
+  }
+  
+  .add-investment-form input[type="text"],
+  .add-investment-form input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    box-sizing: border-box;
+  }
+  
+  .add-investment-form .save-button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: #fff;
+    transition: background-color 0.3s ease;
+  }
+  
+  .add-investment-form .save-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .add-investment-form .error-message {
+    color: #f44336;
+    margin-bottom: 10px;
+  }
+  
+  .add-investment-form .success-message {
+    color: #4caf50;
+    margin-bottom: 10px;
+  }

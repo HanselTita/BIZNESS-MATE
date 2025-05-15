@@ -69,6 +69,20 @@
   width: 100%;
 }
 
+.dashboard-header-sidebar .navigation ul li.active-sidebar-item a {
+  background-color: #ffffff; /* White background when active */
+  color: #0a0a0a; /* Keep the text color dark */
+  font-weight: bold; /* Keep the text bold */
+  border: solid 3px #0a46fc; /* Add a border to the active item */
+  border-radius: 4px; /* Keep the rounded corners */
+  
+}
+
+.dashboard-header-sidebar .navigation ul li.active-sidebar-item a:hover {
+  background-color: #eee; /* Slightly different hover when active, optional */
+  color: #333;/* Dark text color on hover */
+}
+
 .dashboard-header-sidebar .navigation li {
   margin-bottom: 10px;
 }
@@ -86,6 +100,8 @@
 
 .dashboard-header-sidebar .navigation li a:hover {
   background-color: #ffffff;
+  border: solid 3px #0a46fc;
+  color: #0a0a0a;
 }
 
 .dashboard-content { /* Right column */
@@ -127,10 +143,71 @@
           font-weight: bold;
         }
 
-        .table-data-row {
+        .dashboard-content .table-data-row {
           border: 1px solid #ccc;
           padding: 20px;
           border-radius: 0 4px 4px 4px;
           background-color: #fff;
+          /* You might want to remove or adjust these if the form needs more space */
+          /* min-height: 200px; */
+          /* display: flex;
+          justify-content: center;
+          align-items: center; */
         }
         
+        /* Style for the AddInvestmentForm (if not already present) */
+        .add-investment-form {
+          padding: 20px;
+        }
+        
+        .add-investment-form h2 {
+          margin-top: 0;
+          margin-bottom: 20px;
+          color: #333;
+        }
+        
+        .add-investment-form .form-group {
+          margin-bottom: 15px;
+        }
+        
+        .add-investment-form label {
+          display: block;
+          margin-bottom: 5px;
+          color: #555;
+          font-weight: bold;
+        }
+        
+        .add-investment-form input[type="text"],
+        .add-investment-form input[type="number"] {
+          width: 100%;
+          padding: 10px;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          font-size: 16px;
+          box-sizing: border-box;
+        }
+        
+        .add-investment-form .save-button {
+          padding: 12px 20px;
+          border: none;
+          border-radius: 4px;
+          font-size: 16px;
+          cursor: pointer;
+          background-color: #007bff;
+          color: #fff;
+          transition: background-color 0.3s ease;
+        }
+        
+        .add-investment-form .save-button:hover {
+          background-color: #0056b3;
+        }
+        
+        .add-investment-form .error-message {
+          color: #f44336;
+          margin-bottom: 10px;
+        }
+        
+        .add-investment-form .success-message {
+          color: #4caf50;
+          margin-bottom: 10px;
+        }
