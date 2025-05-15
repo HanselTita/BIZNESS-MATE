@@ -6,6 +6,7 @@ import AddProductionForm from './AddProductionForm';
 import AddExpenditureForm from './AddExpenditureForm';
 import AddSaleForm from './AddSaleForm';
 import DeleteInvestmentForm from './DeleteInvestmentForm'; // Import the new form
+import Calculator from './Calculator';
 
 function Dashboard() {
   const [activeTab, setActiveTab] = useState('production');
@@ -45,6 +46,11 @@ function Dashboard() {
     setActiveTab('delete-investment');
   };
 
+  const handleCalculatorClick = () => {
+    setActiveTab('calculator');
+  };
+
+
   const handleLogout = () => {
     localStorage.removeItem('authToken');
     localStorage.removeItem('rememberMe');
@@ -78,7 +84,10 @@ function Dashboard() {
             <li className={activeTab === 'add-sale' ? 'active-sidebar-item' : ''}>
               <Link to="#" onClick={handleSalesClick}>Sales</Link>
             </li>
-            <li className={activeTab === 'delete-investment' ? 'active-sidebar-item' : ''}>
+            <li className={activeTab === 'calculator' ? 'active-sidebar-item' : ''}>
+              <Link to="#" onClick={handleCalculatorClick}>Calculator</Link>
+            </li>
+             <li className={activeTab === 'delete-investment' ? 'active-sidebar-item' : ''}>
               <Link to="#" onClick={handleDeleteInvestmentClick}>Delete Investment</Link>
             </li>
           </ul>
@@ -119,6 +128,7 @@ function Dashboard() {
           {activeTab === 'add-production' && <AddProductionForm />}
           {activeTab === 'add-expenditure' && <AddExpenditureForm />}
           {activeTab === 'add-sale' && <AddSaleForm />}
+          {activeTab === 'calculator' && <Calculator />}
           {activeTab === 'delete-investment' && <DeleteInvestmentForm />}
           {activeTab === 'production' && <div>Data for Cost of Production</div>}
           {activeTab === 'expenditure' && <div>Data for Total Expenditure</div>}
